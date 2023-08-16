@@ -40,4 +40,8 @@ int main()
     //update
     MatrixXd K;
     K = P * C.transpose() / (C * P * C.transpose() + R);
+
+    x_estimated = x_predicted + K*(y - C*x_predicted);
+
+    //P = (1 - K*C) * P;
 }   
